@@ -1,0 +1,15 @@
+{
+  "name": "cdktf-for-azure",
+  "dockerComposeFile": ["compose.yaml"],
+  "service": "cdktf-for-azure",
+  "workspaceFolder": "/workspace",
+  "remoteEnv": {
+    "ARM_USER_AZXUREAD": "true"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": ["ms-vsliveshare.vsliveshare", "biomejs.biome"]
+    }
+  },
+  "postCreateCommand": "cdktf get"
+}

@@ -1,0 +1,14 @@
+services:
+  cdktf-for-azure:
+    build:
+      context: ..
+      dockerfile: .devcontainer/Dockerfile
+    volumes:
+      - cdktf-for-azure-node-modules:/workspace/node_modules
+      - ..:/workspace
+    tty: true
+    stdin_open: true
+    hostname: cdktf-for-azure
+
+volumes:
+  cdktf-for-azure-node-modules:
