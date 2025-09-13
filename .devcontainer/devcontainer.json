@@ -11,5 +11,5 @@
       "extensions": ["ms-vsliveshare.vsliveshare", "biomejs.biome"]
     }
   },
-  "postCreateCommand": "cdktf get"
+  "postCreateCommand": "/bin/sh .devcontainer/postCreateCommand.sh"
 }

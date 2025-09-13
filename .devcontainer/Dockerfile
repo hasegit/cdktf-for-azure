@@ -27,5 +27,5 @@ RUN apt-get update && apt-get install -y git vim locales \
  && ln -snf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime \
  && echo Asia/Tokyo >/etc/timezone \
  && sed -i '/ja_JP.UTF-8/s/^# //g' /etc/locale.gen \
- && locale-gen ja_JP.UTF-8\
+ && locale-gen ja_JP.UTF-8 \
  && update-locale LANG=ja_JP.UTF-8 LANGUAGE=ja_JP:ja LC_ALL=ja_JP.UTF-8
