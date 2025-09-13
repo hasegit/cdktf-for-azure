@@ -20,8 +20,8 @@ COPY --from=cdktf-az /usr/bin/terraform /usr/bin/terraform
 COPY --from=cdktf-az /usr/local/lib/node_modules/cdktf-cli /usr/local/lib/node_modules/cdktf-cli
 COPY --from=cdktf-az /usr/bin/az /usr/bin/az
 COPY --from=cdktf-az /opt/az /opt/az
-ENV LANG-ja_JP.UTF-8 LANGUAGE-ja_JP:ja LC_ALL-ja_JP.UTF-8
-RUN apt-get update && apt-get install -y vim locales \
+ENV LANG=ja_JP.UTF-8 LANGUAGE=ja_JP:ja LC_ALL=ja_JP.UTF-8
+RUN apt-get update && apt-get install -y git vim locales \
  && apt-get clean && rm -rf /var/lib/apt/lists/* \
  && ln -snf /usr/local/lib/node_modules/cdktf-cli/bundle/bin/cdktf /usr/local/bin/cdktf \
  && ln -snf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime \
