@@ -1,0 +1,32 @@
+{
+  "name": "@tmp/stapp",
+  "version": "0.1.0",
+  "private": true,
+  "main": "src/stapp.ts",
+  "types": "src/stapp.ts",
+  "license": "MPL-2.0",
+  "scripts": {
+        "test": "jest --config ../../jest.config.ts"
+  },
+  "dependencies": {
+    "@cdktf/provider-azurerm": "14.12.1",
+    "constructs": "^10.4.2"
+  },
+    "nx": {
+      "targets": {
+    "build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npm --prefix packages/core run build"
+      }
+    },
+    "test": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npm test",
+        "cwd": "packages/stapp"
+      }
+    }
+  }
+}
+}
